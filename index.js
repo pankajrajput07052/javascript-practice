@@ -27,15 +27,15 @@ reader.getTableNames();
 
 const table = reader.getTable("Amad");
 table.getColumnNames();
-const data = table.getData();
+ const data = table.getData();
 
-data.forEach((row) => {
-  console.log("-------------------------------");
-  console.log(row.AMADNO);
-  console.log(row.PARTY);
-  console.log(row.VILL);
-  console.log(row.MARK1);
-  conn.query(
-    `INSERT INTO AMAD(COLD_ID,AMADNO,ENTRY,PARTY,VILL,PACKETS,KISM,YEAR,MARK) VALUES (1,${row.AMADNO},${row.ENTRY},${row.PARTY},${row.VILL},${row.PACKETS},${row.KISM},${row.YEAR},${row.MARK})`
-  );
-});
+ data.forEach((row) => {
+   console.log("-------------------------------");
+   console.log(row.AMADNO);
+   console.log(row.PARTY);
+   console.log(row.VILL);
+   console.log(row.MARK1);
+   conn.query(
+     `INSERT INTO AMAD(COLD_ID,AMADNO,ENTRY,PARTY,VILL,PACKETS,KISM,YEAR,MARK) VALUES (1,${row.AMADNO},${row.ENTRY},${row.PARTY},${row.VILL},${row.PACKETS},${row.KISM},${row.YEAR},${row.MARK})`
+   );
+ });

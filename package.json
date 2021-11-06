@@ -7,7 +7,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description":  "",
   "dependencies": {
     "mdb-reader": "^1.0.8",
     "mysql": "^2.18.1",

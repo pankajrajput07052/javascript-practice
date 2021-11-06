@@ -1,11 +1,11 @@
 function getConnection() {
       const mysql = require("mysql2");
       const connDetail = {
-            host: "localhost",
-            user: "root",
-            password: "password",
-            database: "mysqldb"
-      }
+        host: "localhost",
+        user: "root",
+        password: "password",
+        database: "mysqldb",
+      };
       const conn = mysql.createConnection(connDetail)
       conn.connect((err, result) => {
             if (err) {

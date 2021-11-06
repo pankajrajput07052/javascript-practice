@@ -36,13 +36,25 @@ function getGrp() {
       })
 }
 
+function getWholeData(tableName){
+      connection.query(`select * from ${tableName}`, (err,data) => {
+            if(err){
+                  return console.error(`Error while getting table ${tableName} `);
+            }
+            console.log(`getting data from table ${tableName}`);
+            console.log(data);
+      })
+}
+
 //make connection to mysql database!!
 const connection = getConnection();
 
 // get cold_info
-const coldInfo = getColdInfo();
+//const coldInfo = getColdInfo();
 
 // get data from GRP table
-getGrp();
+//getGrp();
 
-// 
+// get data from whole tableName
+getWholeData("cold_info");
+getWholeData("grp");

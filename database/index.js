@@ -62,6 +62,22 @@ function loadColdInfo() {
   console.log("data inserted");
 }
 
+function loadAmad() {
+  const row = {
+    AMADNO: 12345,
+    ENTRY: "2007-02-11",
+    PARTY: "Remya",
+    VILL: "Parsippany",
+    PACKETS: "1234",
+    KISM: "kishm",
+    YEAR: "2021",
+    MARK: "9999/123",
+  };
+  let sql = `INSERT INTO AMAD(COLD_ID,AMADNO,ENTRY,PARTY,VILL,PACKETS,KISM,YEAR,MARK) VALUES (1,${row.AMADNO},${row.ENTRY},${row.PARTY},${row.VILL},${row.PACKETS},${row.KISM},${row.YEAR},${row.MARK})`;
+  connection.query(sql);
+  console.log("data inserted into amad");
+}
+
 //make connection to mysql database!!
 const connection = getConnection();
 
@@ -75,4 +91,5 @@ const connection = getConnection();
 //getWholeData("cold_info");
 //getWholeData("grp");
 
-loadColdInfo();
+//loadColdInfo();
+loadAmad();

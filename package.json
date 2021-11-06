@@ -9,8 +9,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "mdb-reader": "^1.0.8",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",
-    "node-odbc": "^0.2.10",
     "nodemon": "^2.0.14"
-  }
+  },
+  "type": "module"
 }

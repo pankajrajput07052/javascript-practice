@@ -57,4 +57,4 @@ const connection = getConnection();
 
 // get data from whole tableName
 getWholeData("cold_info");
-getWholeData("grp");
+//getWholeData("grp");

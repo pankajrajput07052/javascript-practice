@@ -1,32 +1,12 @@
-//const mysql = require("mysql2");
-import mysql from "mysql2";
-
-function getConnection() {
-  const connDetail = {
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "mysqldb",
-  };
-  const conn = mysql.createConnection(connDetail);
-  conn.connect((err, result) => {
-    if (err) {
-      return console.error("Error:=> connecting to mysql Database");
-    }
-    console.log("connected!!!!");
-  });
-  return conn;
-}
+import connection from "../config/connection";
 
 function getColdInfo() {
-  var coldInfo;
   connection.query("select * from cold_info", (err, data) => {
     if (err) {
       return console.error("Error in fetching data from cold_info table");
     }
-    coldInfo = data;
+    console.log(data);
   });
-  return coldInfo;
 }
 
 function getGrp() {
@@ -55,12 +35,12 @@ function loadColdInfo() {
   console.log("data inserted");
 }
 
-function loadColdInfo() {
-  connection.query(
-    "insert into COLD_INFO(COLD_ID,COLD_SUBMITTER,COLD_NAME,OWNER,CONTACT,ADDRESS,FACEBOOK_URL) values(3,'niniramcs','Ninnu Ram ice & cold storage pvt. ltd','Rajendra Prashad Lodhi','+91-9927083090','mainpuri road aron','https://www.facebook.com/baapucold');"
-  );
-  console.log("data inserted");
-}
+// function loadColdInfo() {
+//   connection.query(
+//     "insert into COLD_INFO(COLD_ID,COLD_SUBMITTER,COLD_NAME,OWNER,CONTACT,ADDRESS,FACEBOOK_URL) values(3,'niniramcs','Ninnu Ram ice & cold storage pvt. ltd','Rajendra Prashad Lodhi','+91-9927083090','mainpuri road aron','https://www.facebook.com/baapucold');"
+//   );
+//   console.log("data inserted");
+// }
 
 function loadAmad() {
   const row = {
@@ -79,10 +59,10 @@ function loadAmad() {
 }
 
 //make connection to mysql database!!
-const connection = getConnection();
+//const connection = getConnection();
 
 // get cold_info
-//const coldInfo = getColdInfo();
+getColdInfo();
 
 // get data from GRP table
 //getGrp();
@@ -92,4 +72,4 @@ const connection = getConnection();
 //getWholeData("grp");
 
 //loadColdInfo();
-loadAmad();
+//loadAmad();

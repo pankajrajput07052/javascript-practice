@@ -7,11 +7,12 @@
   },
   "author": "",
   "license": "ISC",
-  "description":  "",
+  "description": "",
   "dependencies": {
     "mdb-reader": "^1.0.8",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",
+    "node-cron": "^3.0.0",
     "nodemon": "^2.0.14"
   },
   "type": "module"
